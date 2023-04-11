@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Login Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: rgb(255, 255, 255);
+		}
+		
+		.container {
+			margin: 50px auto;
+			max-width: 500px;
+			padding: 30px;
+			background-color: #fff;
+			border-radius: 15px;
+			box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.4);
+			align-items: center;
+			text-align: center;
+		}
+		
+		h1 {
+			text-align: center;
+			margin-top: 0;
+		}
+		
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+			margin: auto;
+			justify-content: center;
+			text-align: center;
+			width: auto;
+		}
+		
+		label {
+			font-size: 14px;
+			font-weight: bold;
+			margin-bottom: 5px;
+			display: block;
+		}
+		
+		input[type="text"], input[type="password"] {
+			padding: 10px;
+			border-radius: 3px;
+			border: 1px solid #ccc;
+			margin-bottom: 20px;
+			width: 100%;
+			box-sizing: border-box;
+			padding-right: 10px;
+			padding-right: 10px;
+		}
+		
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			width: auto;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+		
+		@media screen and (max-width: 600px) {
+			.container {
+				max-width: 90%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>QUESTION PAPER MANAGEMENT SYSTEM</h1>
+		<form id="registration-form" onsubmit="return validateForm()">
+			<label for="username">User Id</label>
+			<input type="text" id="UserId" name="UserId" placeholder="Pre-Populated ID (001)" required>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" placeholder="******************" required>
+			<input type="submit" value="Sign in/Register">
+			<p id="error-message" class="error-message"></p>
+		</form>
+	</div>
+	<script>
+		function validateForm(){
+			let UserId = document.getElementById("UserId").value;
+			let Password =  document.getElementById("password").value;
+			if (UserId == "" || Password == "") {
+				document.getElementById("error-message").innerHTML="Please fill out all the fields..";
+				return false;
+			}
+			alert("Admin Login Successful");
+			return true;
+		}
+	</script>
+</body>
+</html>
